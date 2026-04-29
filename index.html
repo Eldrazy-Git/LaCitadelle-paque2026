@@ -211,13 +211,13 @@
     }
 
     .masonry {
-      columns: 4 260px;
-      column-gap: 12px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 12px;
     }
 
     .photo-item {
-      break-inside: avoid;
-      margin-bottom: 12px;
+      margin-bottom: 0;
       border-radius: var(--r);
       overflow: hidden;
       cursor: pointer;
@@ -416,8 +416,7 @@
 
     /* ── RESPONSIVE ──────────────────────────────────── */
     @media (max-width: 520px) {
-      .masonry { columns: 2 130px; column-gap: 8px; }
-      .photo-item { margin-bottom: 8px; }
+      .masonry { grid-template-columns: repeat(2, 1fr); gap: 8px; }
       .lb-btn.prev { left: -8px; }
       .lb-btn.next { right: -8px; }
     }
